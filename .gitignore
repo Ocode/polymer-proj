@@ -3,6 +3,7 @@ logs
 *.log
 *.zip
 
+topeka-elements
 
 # Runtime data
 pids
