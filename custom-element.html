@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Components</title>
+    <!-- <meta http-equiv="refresh" content="5;url=./slide/"> -->
+</head>
+<body>
+    <h1>自定义 Components</h1>
+
+
+<!-- ########## 创建 ########## -->
+<template id="myslider">
+    <!-- slider 的完全代码 -->
+    <p>slider 的完全代码</p>
+</template>
+<script>
+    var sliderProto = Object.create(HTMLElement.prototype);
+    sliderProto.createdCallback = function(){
+        var template = document.querySelector('#myslider');
+        var shadowRoot = this.createShadowRoot();
+        //var clone = document.importNode(template.content,true);
+        var clone = template.content.cloneNode(true);
+        shadowRoot.appendChild(clone);
+    };
+    document.registerElement('my-slider',{prototype: sliderProto});
+</script>
+
+
+<!-- ########## 使用 ########## -->
+<!-- <link rel="import" href="my-slider.html"> -->
+<my-slider></my-slider>
+
+</body>
+</html>
