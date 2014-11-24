@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 1. 加载 platform.js 以提供 polyfill 支持. -->
+    <!-- <script src="bower_components/platform/platform.js"></script> -->
+    <script src="components/webcomponentsjs/webcomponents.js"></script>
+
+    <!-- 2. 使用一个 HTML Import 将 element 导入 -->
+    <link rel="import" href="components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="components/core-header-panel/core-header-panel.html">
+    <link rel="import" href="components/core-icons/core-icons.html">
+    <link rel="import" href="components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="components/paper-tabs/paper-tabs.html">
+<style>
+body {
+  font-family: sans-serif;
+  background-color: #eee;
+}
+core-toolbar {
+  background-color: #03A9F4;
+}
+</style>
+</head>
+<!-- use fullbleed attribute to specify 
+     the body should fill the viewport -->
+<body fullbleed vertical layout unresolved>
+  <core-header-panel flex>
+    <core-toolbar class="medium-tall">
+      <paper-icon-button id="navicon" icon="menu"></paper-icon-button>
+
+      <span flex>Title</span>
+
+      <paper-icon-button id="morebutton" icon="more-vert"></paper-icon-button>
+
+      <paper-tabs class="bottom fit" selected="0">
+        <paper-tab>ONE</paper-tab>
+        <paper-tab>TWO</paper-tab>
+      </paper-tabs>
+      
+    </core-toolbar>
+  </core-header-panel>
+
+
+</body>
+</html>
+
+
